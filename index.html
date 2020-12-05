@@ -24,9 +24,10 @@
             </div>
 
             <div class="col-md-2 col-sm-4" style="padding-top: 20px;">
-                Timer: <p id="demo"></p>
+                Timer: 
+            <span id="count">75</span> seconds
+            <br>            
             </div>
-            <div id="timer"></div>
         </div>
 
         <div class="row">
@@ -53,7 +54,7 @@
                 <br />
                 <p style="text-align: center;">Try to answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
 
-                <p style="text-align: center;"><button type="button" class="btn btn-primary" id="startQuiz">Start Quiz</button></p>
+                <p style="text-align: center;"><button type="button" class="btn btn-primary" id="startQuiz" onclick="start()">Start Quiz</button></p>
 
                 <script>
                     document.getElementById("startQuiz").addEventListener("click", startUserQuiz);
@@ -68,29 +69,25 @@
                     //     x.style.display = "none";
                     }
 
-                    var timerVar = setInterval(countTimer, 1000);
-                    var totalSeconds = 0;
-                    function countTimer() {
-                     ++totalSeconds;
-                        var hour = Math.floor(totalSeconds /3600);
-                        var minute = Math.floor((totalSeconds - hour*3600)/60);
-                        var seconds = totalSeconds - (hour*3600 + minute*60);
-                         if(hour < 10)
-                          hour = "0"+hour;
-                        if(minute < 10)
-                             minute = "0"+minute;
-                        if(seconds < 10)
-                         seconds = "0"+seconds;
-                    document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
-        }
+        //             var timerVar = setInterval(countTimer, 1000);
+        //             var totalSeconds = 0;
+        //             function countTimer() {
+        //              ++totalSeconds;
+        //                 var hour = Math.floor(totalSeconds /3600);
+        //                 var minute = Math.floor((totalSeconds - hour*3600)/60);
+        //                 var seconds = totalSeconds - (hour*3600 + minute*60);
+        //                  if(hour < 10)
+        //                   hour = "0"+hour;
+        //                 if(minute < 10)
+        //                      minute = "0"+minute;
+        //                 if(seconds < 10)
+        //                  seconds = "0"+seconds;
+        //             document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+        // }
                 </script>
-    
-
-                    <!-- <div id ="stop_timer" onclick="clearInterval(timerVar)">Stop time</div> -->
                                          
 
-
-                <!--Questions here-->
+               <!--Questions here-->
 
             </div>
 
