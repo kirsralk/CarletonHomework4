@@ -18,7 +18,7 @@ var questions = [
         "booleans",
         "all of the above"
       ],
-      Cnswer: "all of the above"
+      Answer: "all of the above"
     },
     {
       Question:

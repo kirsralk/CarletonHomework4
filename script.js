@@ -33,6 +33,7 @@ function startUserQuiz() {
   runQuestions();
 }
 
+// Events on quiz end (hide questions, show final screen, hide timer)
 function endUserQuiz() {
   // alert("quiz over");
   document.getElementById("questionArea").classList.add("d-none");
@@ -43,6 +44,20 @@ function endUserQuiz() {
 
 // Logic to run quiz questions
 var questionIndex = 0;
+var checkAnswer = document.getElementById("showCorrect");
+
+function storeVar(el) {
+  var amount = el.getAttribute("value");
+  console.log(amount);
+ 
+  if (questionIndex < 4){
+    questionIndex++;
+    runQuestions();
+  } else {
+    endUserQuiz();
+  }
+  // runQuestions();
+};
 
 function runQuestions() {
   // alert("this ruNQuestions function works");
@@ -60,13 +75,7 @@ function runQuestions() {
   op4.innerHTML = questions[questionIndex].Choices[3];
 
 };
-  //add event listener for clicked answer
-  document.getElementById("questionArea").addEventListener("click",function(){
-    //check if correct answer
-    // alert("testing event listener");
-    questionIndex++;
-    runQuestions();
-  });
+
 
 
 // Click event each time a question is answered
@@ -74,12 +83,22 @@ function choiceClick(){
 
 };
 
-  // Move to Next Question
-questionIndex++;
-
 // Print out Final Score
 
 function printScore() {
   span = document.getElementById("finalScore");
   span.innerHTML = counter;
 }
+
+// Save score to High Scores
+// var submitBtn = document.getElementById("submitScore");
+// submitBtn.onclick = saveScore();
+
+function saveScore(){
+  var initialsEl = document.querySelector("#initials");
+  var userInitials = initialsEl.value.trim();
+    console.log(userInitials);
+    console.log(initialsEl);
+};
+
+

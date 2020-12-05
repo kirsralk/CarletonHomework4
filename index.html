@@ -56,8 +56,7 @@
                 <br />
                 <p style="text-align: center;">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
 
-                <p style="text-align: center;"><button type="button" class="btn btn-primary" id="startQuiz"
-                        onclick="start()">Start Quiz</button></p>
+                <p style="text-align: center;"><button type="button" class="btn btn-primary" id="startQuiz" onclick="start()">Start Quiz</button></p>
 
 
             </div>
@@ -67,18 +66,18 @@
                 <h3 id="questionsHere"></h3>
                 <br />
                 <span id="optionsHere">
-                    <button type="button" class="btn btn-info" id="option1"></button>
+                    <button type="button" class="btn btn-info" id="option1" onclick="storeVar(this)" value="0"></button>
                     <br />
                     <br />
-                    <button type="button" class="btn btn-info" id="option2"></button>
+                    <button type="button" class="btn btn-info" id="option2" onclick="storeVar(this)" value="1"></button>
                     <br />
                     <br />
-                    <button type="button" class="btn btn-info" id="option3"></button>
+                    <button type="button" class="btn btn-info" id="option3" onclick="storeVar(this)" value="2"></button>
                     <br />
                     <br/>
-                    <button type="button" class="btn btn-info" id="option4"></button>
-                </span>
-                <hr />
+                    <button type="button" class="btn btn-info" id="option4" onclick="storeVar(this)" value="3"></button>
+                    </span>
+                    <hr />
                 <span id="showCorrect"></span>
             </div>
 
@@ -89,7 +88,7 @@
                 <p>Your final score is <span id="finalScore"></span>.</p>
                 <br />
                 <p>Enter your initials: <input type="text" id="initials" /></p>
-                <p style="text-align: center;"><button type="button" class="btn btn-primary" id="submitScore">Submit</button></p>
+                <p style="text-align: center;"><a href ="highscores.html"><button class="btn btn-primary" id="submitScore" onclick="saveScore();">Submit</button></a></p>
             </div>
 
             <div class="col-sm-3 col-md-3 col-lg-3">
