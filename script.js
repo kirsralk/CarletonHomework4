@@ -1,5 +1,5 @@
 // Function that runs the timer on quiz start
-var counter = 10;
+var counter = 75;
 
 function startTimer() {
 
@@ -47,43 +47,53 @@ var questionIndex = 0;
 var checkAnswer = document.getElementById("showCorrect");
 
 function storeVar(el) {
+  var answer = document.getElementById("showCorrect");
   var amount = el.getAttribute("value");
     console.log(amount);
 
    //Check correctness, Question 1 
   if (questionIndex === 0 && amount === "2") {
+      answer.innerHTML("Correct!");
+  } else if (questionIndex === 1 && amount === "2") {
       alert("correct");
-  } else {
-      alert("incorrect");
-  }
-  
-  //Check correctness, Question 2
-  if (questionIndex === 1 && amount === "2") {
-    alert("correct");
-  } else {
-    alert("incorrect");
-  }
-  
-  //Check correctness, Question 3
-  if (questionIndex === 2 && amount === "3") {
-    alert("correct");
-  } else {
-    alert("incorrect");
-  }
-
-  //Check correctness, Question 4
-  if (questionIndex === 3 && amount === "2") {
-    alert("correct");
-  } else {
-    alert("incorrect");
-  }
-
-  //Check correctness, Question 5
-  if (questionIndex === 4 && amount === "3") {
+    } else if (questionIndex === 2 && amount === "3") {
       alert("correct");
-  } else {
-      alert("incorrect");
-  }
+    } else if (questionIndex === 3 && amount === "2") {
+      alert("correct");
+    } else if (questionIndex === 4 && amount === "3") {
+        alert("correct");
+    } else {
+        alert("incorrect");
+        counter -=10;
+    };
+  
+  // //Check correctness, Question 2
+  // if (questionIndex === 1 && amount === "2") {
+  //   alert("correct");
+  // } else {
+  //   alert("incorrect");
+  // };
+  
+  // //Check correctness, Question 3
+  // if (questionIndex === 2 && amount === "3") {
+  //   alert("correct");
+  // } else {
+  //   alert("incorrect");
+  // };
+
+  // //Check correctness, Question 4
+  // if (questionIndex === 3 && amount === "2") {
+  //   alert("correct");
+  // } else {
+  //   alert("incorrect");
+  // };
+
+  // //Check correctness, Question 5
+  // if (questionIndex === 4 && amount === "3") {
+  //     alert("correct");
+  // } else {
+  //     alert("incorrect");
+  // };
 
   // Continue iterating through questions, if any left.  Otherwise, end quiz
 
@@ -92,7 +102,7 @@ function storeVar(el) {
     runQuestions();
   } else {
     endUserQuiz();
-  }
+  };
 };
 
 function runQuestions() {
