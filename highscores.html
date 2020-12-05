@@ -49,12 +49,11 @@
                 <!--Main contents-->
                 <h1 style="text-align: center;">Highscores:</h1>
                 <br />
-                <!-- <p style="text-align: center;">Test</p> -->
                 <ul id ="scoreList">
                     <!-- High scores will append here-->
                 </ul>
                 <p style="text-align: center;"><a href ="index.html"><button class="btn btn-primary" id="goBack">Go Back</button></a>
-                    <button class ="btn btn-primary" id ="clearScores">Clear High Scores</button>
+                    <a href="highscores.html"><button class ="btn btn-primary" id ="clearScores" onclick="clearScores()">Clear High Scores</button></a>
                 </p>
             </div>
 
@@ -71,9 +70,11 @@
             document.getElementById("scoreList").innerHTML = x;
         });
 
+        function clearScores() {
+            window.localStorage.clear();
+            };
 
     </script>
-    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
