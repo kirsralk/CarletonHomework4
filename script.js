@@ -20,7 +20,7 @@ function startTimer(){
       startTimer();
   };
 
-//   <!-- Logic for show/hide main divs during quiz-->
+// Logic for show/hide main divs during quiz
 
       document.getElementById("startQuiz").addEventListener("click", startUserQuiz);
 
@@ -29,10 +29,22 @@ function startTimer(){
           //   alert("test test");
           document.getElementById("landingPage").classList.add("d-none");
           document.getElementById("questionArea").classList.remove("d-none");
+          runQuestions();
       }
 
       function endUserQuiz() {
           // alert("quiz over");
           document.getElementById("questionArea").classList.add("d-none");
           document.getElementById("finalScreen").classList.remove("d-none");
-      }
+          document.getElementById("timerDiv").classList.add("d-none");
+      };
+
+// Logic to run quiz questions
+
+      function runQuestions () {
+        alert("this ruNQuestions function works");
+        span = document.getElementById("questionsHere");
+        span.innerHTML = questions[0].Question;
+        span2 = document.getElementById("optionsHere");
+        span2.innerHTML = questions[0].Choices;
+      };
