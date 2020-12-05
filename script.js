@@ -47,16 +47,22 @@ function startTimer(){
       function runQuestions () {
         // alert("this ruNQuestions function works");
         var questionTitle = document.getElementById("questionsHere");
-        questionTitle.innerHTML = questions[0].Question;
+        var questionIndex = 0;
+
+        questionTitle.innerHTML = questions[questionIndex].Question;
+        // questionTitle.innerHTML = questions[0].Question;
         op1 = document.getElementById("option1");
-        op1.innerHTML = questions[0].Choices[0];
+        op1.innerHTML = questions[questionIndex].Choices[0];
         op2 = document.getElementById("option2");
-        op2.innerHTML = questions[0].Choices[1];
+        op2.innerHTML = questions[questionIndex].Choices[1];
         op3 = document.getElementById("option3");
-        op3.innerHTML = questions[0].Choices[2];
+        op3.innerHTML = questions[questionIndex].Choices[2];
         op4 = document.getElementById("option4");
-        op4.innerHTML = questions[0].Choices[3];
+        op4.innerHTML = questions[questionIndex].Choices[3];
       };
+
+// Move to Next Question
+questionIndex++;
 
 // Print out Final Score
 
