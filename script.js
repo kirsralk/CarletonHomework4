@@ -1,6 +1,8 @@
 // Function that runs the timer on quiz start
+var counter = 10;
+
 function startTimer(){
-    var counter = 10;
+
     setInterval(function() {
       counter--;
       if (counter >= 0) {
@@ -37,14 +39,28 @@ function startTimer(){
           document.getElementById("questionArea").classList.add("d-none");
           document.getElementById("finalScreen").classList.remove("d-none");
           document.getElementById("timerDiv").classList.add("d-none");
+          printScore();
       };
 
 // Logic to run quiz questions
 
       function runQuestions () {
-        alert("this ruNQuestions function works");
-        span = document.getElementById("questionsHere");
-        span.innerHTML = questions[0].Question;
-        span2 = document.getElementById("optionsHere");
-        span2.innerHTML = questions[0].Choices;
+        // alert("this ruNQuestions function works");
+        var questionTitle = document.getElementById("questionsHere");
+        questionTitle.innerHTML = questions[0].Question;
+        op1 = document.getElementById("option1");
+        op1.innerHTML = questions[0].Choices[0];
+        op2 = document.getElementById("option2");
+        op2.innerHTML = questions[0].Choices[1];
+        op3 = document.getElementById("option3");
+        op3.innerHTML = questions[0].Choices[2];
+        op4 = document.getElementById("option4");
+        op4.innerHTML = questions[0].Choices[3];
       };
+
+// Print out Final Score
+
+      function printScore() {
+          span = document.getElementById("finalScore");
+          span.innerHTML = counter;
+      }
