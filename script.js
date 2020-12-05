@@ -48,15 +48,51 @@ var checkAnswer = document.getElementById("showCorrect");
 
 function storeVar(el) {
   var amount = el.getAttribute("value");
-  console.log(amount);
- 
+    console.log(amount);
+
+   //Check correctness, Question 1 
+  if (questionIndex === 0 && amount === "2") {
+      alert("correct");
+  } else {
+      alert("incorrect");
+  }
+  
+  //Check correctness, Question 2
+  if (questionIndex === 1 && amount === "2") {
+    alert("correct");
+  } else {
+    alert("incorrect");
+  }
+  
+  //Check correctness, Question 3
+  if (questionIndex === 2 && amount === "3") {
+    alert("correct");
+  } else {
+    alert("incorrect");
+  }
+
+  //Check correctness, Question 4
+  if (questionIndex === 3 && amount === "2") {
+    alert("correct");
+  } else {
+    alert("incorrect");
+  }
+
+  //Check correctness, Question 5
+  if (questionIndex === 4 && amount === "3") {
+      alert("correct");
+  } else {
+      alert("incorrect");
+  }
+
+  // Continue iterating through questions, if any left.  Otherwise, end quiz
+
   if (questionIndex < 4){
     questionIndex++;
     runQuestions();
   } else {
     endUserQuiz();
   }
-  // runQuestions();
 };
 
 function runQuestions() {
@@ -109,6 +145,9 @@ function saveScore(){
 
   window.localStorage.setItem("highscores", JSON.stringify(saveHighScores));
 
+
+
+    console.log(userInitials);
 };
 
 
