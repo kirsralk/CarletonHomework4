@@ -1,6 +1,6 @@
 // Function that runs the timer on quiz start
 function startTimer(){
-    var counter = 75;
+    var counter = 10;
     setInterval(function() {
       counter--;
       if (counter >= 0) {
@@ -10,6 +10,7 @@ function startTimer(){
       if (counter === 0) {
           alert("Sorry, out of time!");
           clearInterval(counter);
+          endUserQuiz();
       }
     }, 1000);
   }
