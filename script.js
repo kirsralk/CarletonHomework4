@@ -1,3 +1,4 @@
+// Function that runs the timer on quiz start
 function startTimer(){
     var counter = 75;
     setInterval(function() {
@@ -14,6 +15,6 @@ function startTimer(){
   }
   function start()
   {
-      document.getElementById("count").style="color:green;";
+      document.getElementById("count");
       startTimer();
   };
