@@ -91,14 +91,27 @@ function printScore() {
 }
 
 // Save score to High Scores
-// var submitBtn = document.getElementById("submitScore");
-// submitBtn.onclick = saveScore();
 
 function saveScore(){
   var initialsEl = document.querySelector("#initials");
   var userInitials = initialsEl.value.trim();
+  var ulScores = document.getElementById("scoreList");
+  var li = document.createElement("li");
+
+  var saveHighScores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+  var newScore = {
+    score: counter,
+    initials: userInitials
+  };
+
+ saveHighScores.push(newScore);
+
+  window.localStorage.setItem("highscores", JSON.stringify(saveHighScores));
+  // window.location.href = "highscores.html";
+
+
     console.log(userInitials);
-    console.log(initialsEl);
 };
 
 
