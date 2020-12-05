@@ -19,3 +19,20 @@ function startTimer(){
       document.getElementById("count");
       startTimer();
   };
+
+//   <!-- Logic for show/hide main divs during quiz-->
+
+      document.getElementById("startQuiz").addEventListener("click", startUserQuiz);
+
+      // Events on quiz start (start timer, hide main content, show question content)
+      function startUserQuiz() {
+          //   alert("test test");
+          document.getElementById("landingPage").classList.add("d-none");
+          document.getElementById("questionArea").classList.remove("d-none");
+      }
+
+      function endUserQuiz() {
+          // alert("quiz over");
+          document.getElementById("questionArea").classList.add("d-none");
+          document.getElementById("finalScreen").classList.remove("d-none");
+      }
