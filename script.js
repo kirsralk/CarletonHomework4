@@ -39,65 +39,38 @@ function endUserQuiz() {
   document.getElementById("questionArea").classList.add("d-none");
   document.getElementById("finalScreen").classList.remove("d-none");
   document.getElementById("timerDiv").classList.add("d-none");
+  document.getElementById("showCorrectDIV").classList.add("d-none");
   printScore();
 };
 
 // Logic to run quiz questions
 var questionIndex = 0;
-var checkAnswer = document.getElementById("showCorrect");
 
 function storeVar(el) {
-  var answer = document.getElementById("showCorrect");
+  var answer = document.getElementById("showCorrectDIV");
   var amount = el.getAttribute("value");
-    console.log(amount);
+  console.log(amount);
 
-   //Check correctness, Question 1 
+  //Check correctness, based on question index
+
   if (questionIndex === 0 && amount === "2") {
-      answer.innerHTML("Correct!");
+    answer.textContent = "Correct!";
   } else if (questionIndex === 1 && amount === "2") {
-      alert("correct");
-    } else if (questionIndex === 2 && amount === "3") {
-      alert("correct");
-    } else if (questionIndex === 3 && amount === "2") {
-      alert("correct");
-    } else if (questionIndex === 4 && amount === "3") {
-        alert("correct");
-    } else {
-        alert("incorrect");
-        counter -=10;
-    };
-  
-  // //Check correctness, Question 2
-  // if (questionIndex === 1 && amount === "2") {
-  //   alert("correct");
-  // } else {
-  //   alert("incorrect");
-  // };
-  
-  // //Check correctness, Question 3
-  // if (questionIndex === 2 && amount === "3") {
-  //   alert("correct");
-  // } else {
-  //   alert("incorrect");
-  // };
-
-  // //Check correctness, Question 4
-  // if (questionIndex === 3 && amount === "2") {
-  //   alert("correct");
-  // } else {
-  //   alert("incorrect");
-  // };
-
-  // //Check correctness, Question 5
-  // if (questionIndex === 4 && amount === "3") {
-  //     alert("correct");
-  // } else {
-  //     alert("incorrect");
-  // };
+    answer.textContent = "Correct!";
+  } else if (questionIndex === 2 && amount === "3") {
+    answer.textContent = "Correct!";
+  } else if (questionIndex === 3 && amount === "2") {
+    answer.textContent = "Correct!";
+  } else if (questionIndex === 4 && amount === "3") {
+    answer.textContent = "Correct!";
+  } else {
+    answer.textContent = "Wrong!";
+    counter -= 10;
+  };
 
   // Continue iterating through questions, if any left.  Otherwise, end quiz
 
-  if (questionIndex < 4){
+  if (questionIndex < 4) {
     questionIndex++;
     runQuestions();
   } else {
@@ -106,7 +79,6 @@ function storeVar(el) {
 };
 
 function runQuestions() {
-  // alert("this ruNQuestions function works");
   var questionTitle = document.getElementById("questionsHere");
 
 
@@ -122,13 +94,6 @@ function runQuestions() {
 
 };
 
-
-
-// Click event each time a question is answered
-function choiceClick(){
-
-};
-
 // Print out Final Score
 
 function printScore() {
@@ -138,7 +103,7 @@ function printScore() {
 
 // Save score to High Scores
 
-function saveScore(){
+function saveScore() {
   var initialsEl = document.querySelector("#initials");
   var userInitials = initialsEl.value.trim();
   var ulScores = document.getElementById("scoreList");
@@ -151,13 +116,8 @@ function saveScore(){
     initials: userInitials
   };
 
- saveHighScores.push(newScore);
-
+  saveHighScores.push(newScore);
   window.localStorage.setItem("highscores", JSON.stringify(saveHighScores));
-
-
-
-    console.log(userInitials);
 };
 
 
